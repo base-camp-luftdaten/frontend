@@ -3,4 +3,5 @@ node_js:
   - 'node'
 dist: trusty
 script:
+  - npm run build
   - npm test
