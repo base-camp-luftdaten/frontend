@@ -34,8 +34,9 @@
     "webpack-dev-server": "3.3.1"
   },
   "dependencies": {
-    "d3": "5.9.2",
+    "chart.js": "2.8.0",
     "heatmap.js": "2.0.5",
-    "leaflet": "1.4.0"
+    "leaflet": "1.4.0",
+    "point-in-polygon": "1.0.1"
   }
 }
