@@ -7,8 +7,11 @@ import inside from 'point-in-polygon';
 
 (async () => {
   let airChart;
+  let sliderPosition = 0;
+
   const airData = await fetchData();
-  const heatmap = initMap(airData[0], function visibleAreaChanged(event) {
+
+  const heatmap = initMap(airData[sliderPosition], function visibleAreaChanged(event) {
     const bounds = event.target.getBounds();
     const southWest = bounds._southWest;
     const northEast = bounds._northEast;
@@ -23,7 +26,9 @@ import inside from 'point-in-polygon';
   });
 
   initRangeSlider(function onChange(i) {
-    heatmap.setData({ data: airData[Math.min(i, 23)] });
+    sliderPosition = Math.min(i, 23);
+    airChart.onSliderChange(23 - sliderPosition);
+    heatmap.setData({ data: airData[sliderPosition] });
   });
 
   airChart = initAirChart(prepareDataForChart(airData));

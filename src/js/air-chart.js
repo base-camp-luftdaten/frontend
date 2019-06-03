@@ -1,4 +1,5 @@
 import { Chart } from 'chart.js';
+import 'chartjs-plugin-annotation';
 
 export function prepareDataForChart(data) {
   // return data.flat().map(function(measurement) {
@@ -51,6 +52,30 @@ export function initAirChart(chartData) {
             }
           }
         ]
+      },
+      annotation: {
+        events: ['click'],
+        annotations: [
+          {
+            drawTime: 'afterDatasetsDraw',
+            id: 'vline',
+            type: 'line',
+            mode: 'vertical',
+            scaleID: 'x-axis-0',
+            value: 9000, // purposely high
+            borderColor: 'black',
+            borderWidth: 2
+            // label: {
+            //   backgroundColor: 'red',
+            //   content: 'Test Label',
+            //   enabled: true
+            // },
+            // onClick: function(e) {
+            //   // The annotation is is bound to the `this` variable
+            //   console.log('Annotation', e.type, this);
+            // }
+          }
+        ]
       }
     }
   });
@@ -58,6 +83,10 @@ export function initAirChart(chartData) {
   return {
     onDataChange: function(newData) {
       myChart.data.datasets[0].data = newData;
+      myChart.update();
+    },
+    onSliderChange: function(sliderPosition) {
+      myChart.annotation.elements.vline.options.value = sliderPosition;
       myChart.update();
     }
   };
