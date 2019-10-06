@@ -39,21 +39,19 @@ import inside from 'point-in-polygon';
     airChart = initAirChart(prepareDataForChart(airData));
 })();
 
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px 
-function openSidebar() {
-    document.getElementById("sidebar").style.width = "40%";
-    document.getElementById("openbtn").style.marginLeft = "250px";
-}*/
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 
-function closeSidebar() {
-    document.getElementById("sidebar").style.width = "0";
-    document.getElementById("openbtn").style.marginLeft = "0";
-}*/
-
 document.getElementById("openbtn").addEventListener("click", toggleSidebar);
+document.getElementById("map").addEventListener("click", hideTextbox);
+document.getElementById("about-site").addEventListener("click", showAboutTextbox);
+document.getElementById("contact-site").addEventListener("click", showContactTextbox);
+document.querySelector('.mobile-open').addEventListener('click', toggleSideBarMobile);
+document.querySelector('.mobile-close').addEventListener('click', toggleSideBarMobile);
+
+function toggleSideBarMobile() {
+    document.querySelector('.sidebar').classList.toggle('open');
+}
 
 function toggleSidebar() {
+
     let sidebarSize = document.getElementById("sidebar").style.width;
     if (sidebarSize == "30%") {
         return closeSidebar();
@@ -62,11 +60,12 @@ function toggleSidebar() {
 }
 
 /*
-Opens the sidebar
+Opens/closes the sidebar
 */
 function openSidebar() {
     document.getElementById("sidebar").style.width = "30%";
     document.getElementById("map-wrapper").style.width = "70%";
+    document.getElementById("navbar").style.width = "70%";
     document.getElementById("map").style.width = "200%";
     document.getElementById("openbtn").innerHTML = '&#10005';
 }
@@ -74,6 +73,22 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById("sidebar").style.width = "0";
     document.getElementById("map-wrapper").style.width = "100%";
+    document.getElementById("navbar").style.width = "100%";
     document.getElementById("map").style.width = "200%";
     document.getElementById("openbtn").innerHTML = '&#9776;';
+}
+
+function showAboutTextbox() {
+    hideTextbox();
+    document.getElementById("about").style.display = "block";
+}
+
+function showContactTextbox() {
+    hideTextbox();
+    document.getElementById("contact").style.display = "block";
+}
+
+function hideTextbox() {
+    document.getElementById("contact").style.display = "none";
+    document.getElementById("about").style.display = "none";
 }

@@ -6,13 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>base.camp Luftdaten</title>
 </head>
 
 <body>
+    <div id="navbar" class="topnav">
+        <h1 id="home">base.camp Luftdaten</h1>
+        <!--<a class="active" href="#home">Home</a>-->
+        <button id="about-site">About</button>
+        <a href="https://github.com/base-camp-luftdaten" target="_blank">GitHub</a>
+        <button id="contact-site">Contact</button>
+        <button id="openbtn" class="openbtn">&#9776;</button>
+    </div>
+    <div id="about" class="textbox-layer">
+        <div id="about-content">
+            <h1>Über dieses Projekt</h1>
+            <p>Dieses Projekt visualisiert Umweltdaten, wie Feinstaubwerte, die von einer öffentlichen Initiative erstellt werden (<a href="https://luftdaten.info" target=blank>https://luftdaten.info <i class="fa fa-external-link"></i></a>).</p>
+            <p>Die Daten werden kontinuierlich gesammelt und gespeichert. Zudem gibt es ein Vorhersagemodell, dass für die nächsten Stunden die Luftqualität vorhersagen kann.</p>
+            <p>Durch eine bequeme Visualisierung lässt sich Luftqualität auch historisch nachvollziehen (z.B. bei besonderen Ereignissen, wie einem Hafenfest oder an Silvester).</p>
+            <h2>Projektschwerpunkte:</h2>
+            <ul style="padding-left:20px">
+                <li>Citizen Science</li>
+                <li>Auswertung von Sensordaten</li>
+                <li>Maschinelles Lernen (Regression, Neuronale Netze)</li>
+                <li>Big-Data Anwendung</li>
+                <li>Visualisierung und Vorhersage</li>
+            </ul>
+        </div>
+    </div>
+    <div id="contact" class="textbox-layer">
+        <div id="contact-content">
+            <h1>Kontakt</h1>
+            <p>
+                Universität Hamburg </br>
+                Fachbereich Informatik </br>
+                Vogt-Kölln-Straße 30, Raum G-027 </br>
+                22527 Hamburg
+            </p>
+            <p>
+                <b>Tel.: </b>+49 40 42883 2284 </br>
+                <b>Mail: </b><a href="mailto:basecamp@informatik.uni-hamburg.de">basecamp@informatik.uni-hamburg.de</a> </br>
+                <b>Web: </b><a href="https://basecamp.informatik.uni-hamburg.de" target=blank>https://basecamp.informatik.uni-hamburg.de</a>
+            </p>
+        </div>
+    </div>
     <div id="map-wrapper" class="map-wrapper">
-        <button class="openbtn" id="openbtn">&#9776;</button>
         <div id="map"></div>
+        <button class="mobile-open">▲</button>
         <div class="range-slider-wrapper">
             <input type="range" min="0" max="24" steps="1" class="range-slider" />
             <span class="left"></span>
@@ -21,6 +62,7 @@
         </div>
     </div>
     <div id="sidebar" class="sidebar">
+        <button class="mobile-close">▼</button>
         <main>
             <h1>Luftdaten</h1>
             <canvas id="myChart" width="400" height="400"></canvas>
