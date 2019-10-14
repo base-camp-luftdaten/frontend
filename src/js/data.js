@@ -103,7 +103,7 @@ export function processData(data, now) {
 }
 
 export async function getHeatmapForTimestamp(timestampInSeconds, type) {
-  const response = await fetch(`http://localhost:8080/heatmap/?timestamp=${timestampInSeconds}&type=${type}`);
+  const response = await fetch(`http://basecamp-demos.informatik.uni-hamburg.de:8080/AirDataBackendService/heatmap/?timestamp=${timestampInSeconds}&type=${type}`);
   try {
     const data = await response.json();
     return data;
