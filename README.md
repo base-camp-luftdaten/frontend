@@ -1,10 +1,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e81fde5-90d4-40f2-a358-9ca43362b0a2/deploy-status)](https://app.netlify.com/sites/airdata/deploys)
 
-# frontend
+# base.camp Luftdaten Frontend
+
+This web app uses sensor data from the openSource project luftdaten.info to predict particulate matter development for Germany. The project was implemented as part of the base.camp of the Department of Computer Science at the University of Hamburg.
 
 ## Setup
 
-To start developing, there are 2 options to get the project up and running:
+To start developing, there are two options to get the project up and running:
 
 1. via Docker
 
@@ -38,6 +40,7 @@ To start developing, there are 2 options to get the project up and running:
    to start the development server.
 
 ## Contributing
+To contribute please follow these few steps:
 
 1. `git checkout master`
 2. `git pull`
