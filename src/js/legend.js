@@ -11,7 +11,7 @@ var gradientImg = document.querySelector('#gradient');
 var legendCtx = legendCanvas.getContext('2d');
 var gradientCfg = {};
 
-function updateLegend(data) {
+export function updateLegend(data) {
     // the onExtremaChange callback gives us min, max, and the gradientConfig
     // so we can update the legend
     min.innerHTML = data.min;
