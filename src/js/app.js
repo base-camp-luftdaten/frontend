@@ -50,7 +50,7 @@ async function getDataForEntireDay(listOfTimestamps, type) {
     let timestamps = getTimestampsFromDate(today);
     let dataFullDay = await getDataForEntireDay(timestamps, type);
 
-    const heatmap = initMap(dataFullDay[sliderPosition], function visibleAreaChanged(event) {
+    const heatmap = initMap(dataFullDay[sliderPosition], max, function visibleAreaChanged(event) {
         const bounds = event.target.getBounds();
         const southWest = bounds._southWest;
         const northEast = bounds._northEast;

@@ -24,7 +24,7 @@ const cfg = {
     onExtremaChange: updateLegend
 };
 
-export function initMap(airData, onVisibleAreaChanged) {
+export function initMap(airData, max, onVisibleAreaChanged) {
     const osmTileLayer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
